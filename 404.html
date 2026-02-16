@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stackly | 404</title>
+    <meta
+      name="description"
+      content="Stackly is a full stack developer portfolio showcasing modern web applications, UI design, and scalable digital solutions. Explore projects and experience."
+    />
+    <meta
+      name="keywords"
+      content="Stackly, full stack developer, web developer portfolio, frontend developer, backend developer, portfolio website"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Stackly | 404 Page Not Found" />
+    <meta
+      property="og:description"
+      content="Explore projects, skills, and development work at Stackly portfolio."
+    />
+    <meta property="og:site_name" content="Stackly" />
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <!-- ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <!-- ScrollTo -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollToPlugin.min.js"></script>
+    <!-- ScrollSmoother  -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
+    <!-- SplitText -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"></script>
+    <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/EasePack.min.js"></script>
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- GOOGLE FONT CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Cinzel:wght@400..900&family=Dancing+Script:wght@400..700&family=Della+Respira&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Julius+Sans+One&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+  </head>
+
+  <body
+    class="bg-[#f3f4f6] font-primary min-h-screen flex items-center justify-center px-6"
+  >
+    <!-- CONTAINER -->
+    <div class="error-wrapper w-full text-center">
+      <!-- CARD -->
+      <div class="error-card card-hover bg-white rounded-3xl shadow-sm p-14">
+        <!-- ICON -->
+        <div
+          class="error-icon text-lime-400 text-6xl mb-8 flex items-center justify-center"
+        >
+          <img class="h-56" src="./src/assets/error.webp" alt="error" />
+        </div>
+
+        <!-- TITLE -->
+        <h2 class="error-title text-3xl font-semibold text-gray-800 mb-6">
+          Page Not Found
+        </h2>
+
+        <!-- DESC -->
+        <p class="error-text text-gray-500 max-w-lg mx-auto mb-10">
+          The page you're looking for doesn't exist or was moved. Check the URL
+          or return to the homepage.
+        </p>
+
+        <!-- BUTTONS -->
+        <div
+          class="error-actions flex flex-col sm:flex-row justify-center gap-5"
+        >
+          <a
+            href="./index.html"
+            class="btn-hover bg-[#0b1220] text-white px-8 py-3 rounded-full font-medium transition inline-flex items-center gap-3"
+          >
+            Go Home
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+
+          <button
+            onclick="history.back()"
+            class="btn-hover bg-white border border-gray-300 text-gray-800 px-8 py-3 rounded-full font-medium transition cursor-pointer"
+          >
+            Go Back
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      /* card entrance */
+      gsap.from(".error-card", {
+        scale: 0.9,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      /* icon pop */
+      gsap.from(".error-icon", {
+        y: -40,
+        opacity: 0,
+        duration: 0.8,
+        delay: 0.3,
+        ease: "back.out(1.7)",
+      });
+
+      /* text stagger */
+      gsap.from(" .error-title, .error-text, .error-actions", {
+        y: 40,
+        opacity: 0,
+        duration: 0.9,
+        stagger: 0.15,
+        delay: 0.4,
+        ease: "power3.out",
+      });
+    </script>
+  </body>
+</html>

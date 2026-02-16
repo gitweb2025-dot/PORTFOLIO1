@@ -1,0 +1,49 @@
+/* NAV HOVER */
+
+.nav-hover {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.nav-hover span {
+  display: block;
+  position: relative;
+}
+
+.nav-hover span::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+
+/* HOME */
+
+.round-text svg {
+  width: 100%;
+  height: 100%;
+  fill: #000; /* text color */
+}
+
+/* footer */
+
+.hover-link:hover {
+  color: #84cc16;
+  transition: 0.3s ease;
+}
+
+.social-hover:hover {
+  color: #84cc16;
+  transition: 0.3s ease;
+}
+
+.btn-hover:hover {
+  background-color: #65a30d;
+  transition: 0.3s ease;
+}
+
+.input-hover:focus {
+  outline: none;
+  border-color: #84cc16;
+  transition: 0.3s ease;
+}

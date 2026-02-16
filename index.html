@@ -1,0 +1,1594 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stackly | Full Stack Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Stackly is a full stack developer portfolio showcasing modern web applications, UI design, and scalable digital solutions. Explore projects and experience."
+    />
+    <meta
+      name="keywords"
+      content="Stackly, full stack developer, web developer portfolio, frontend developer, backend developer, portfolio website"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Stackly | Full Stack Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Explore projects, skills, and development work at Stackly portfolio."
+    />
+
+    <meta property="og:site_name" content="Stackly" />
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <!-- ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <!-- ScrollTo -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollToPlugin.min.js"></script>
+    <!-- ScrollSmoother  -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
+    <!-- SplitText -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"></script>
+    <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/EasePack.min.js"></script>
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- GOOGLE FONT CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Cinzel:wght@400..900&family=Dancing+Script:wght@400..700&family=Della+Respira&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Julius+Sans+One&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Marcellus&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- J-QUERY CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- LENIS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.3.17/dist/lenis.css"
+    />
+    <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="bg-gray-100 font-primary">
+    <!-- SITE CONTENT -->
+    <div>
+      <!-- NAVBAR -->
+      <header
+        class="fixed top-0 left-0 right-0 max-w-7xl mx-auto w-full z-40 text-sm"
+      >
+        <!-- DESKTOP NAVBAR -->
+        <nav
+          aria-label="navbar"
+          id="navbar"
+          class="bg-white flex items-center justify-between px-6 md:px-12 py-3 md:py-4 border border-white/10 rounded-[10px] m-6 text-black"
+        >
+          <div>
+            <a class="font-bold" href="./index.html">STACKLY</a>
+          </div>
+          <div class="hidden mdxl:flex items-center gap-8">
+            <!-- HOME DROPDOWN -->
+            <div class="relative">
+              <div class="flex items-center gap-1 font-medium">
+                <a class="nav-hover" href="./index.html" class="font-medium"
+                  ><span data-text="HOME">HOME</span></a
+                >
+
+                <button id="homeToggle">
+                  <svg
+                    id="homeCaret"
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Dropdown -->
+              <div
+                id="homeMenu"
+                class="absolute left-0 mt-3 w-36 rounded-xl bg-white text-black backdrop-blur-xl border border-white/20 shadow-lg overflow-hidden hidden"
+              >
+                <a
+                  href="./404.html"
+                  class="home-item block px-6 py-4 text-sm hover:bg-primary/10"
+                  >Home 2</a
+                >
+              </div>
+            </div>
+
+            <!-- ABOUT -->
+            <a class="nav-hover" href="./404.html"
+              ><span data-text="ABOUT">ABOUT</span></a
+            >
+            <a class="nav-hover" href="./404.html"
+              ><span data-text="SERVICES">SERVICES</span></a
+            >
+            <a class="nav-hover" href="./404.html"
+              ><span data-text="PORTFOLIO">PORTFOLIO</span></a
+            >
+            <a class="nav-hover" href="./404.html"
+              ><span data-text="CONTACT">CONTACT</span></a
+            >
+          </div>
+          <div>
+            <a
+              href="./404.html"
+              class="font-medium hidden lg:flex items-center gap-3 bg-primary text-black px-4 py-2 rounded-full relative group overflow-hidden z-10 hover:text-primary transition-all duration-500 ease-in-out"
+            >
+              <div
+                class="absolute inset-0 z-[-1] w-0 bg-black rounded-full group-hover:w-full group-hover:h-full transition-all duration-500 ease-in-out"
+              ></div>
+              Download CV
+              <div>
+                <div
+                  class="bg-black text-primary rounded-full w-10 h-10 flex items-center justify-center group-hover:text-black group-hover:bg-primary transition-all duration-500 ease-in-out"
+                >
+                  <i class="fa-solid fa-cloud-arrow-down text-sm"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- HAMBURGER ICON -->
+          <div class="text-2xl cursor-pointer ham-icon block lg:hidden">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </nav>
+
+        <!-- MOBILE NAV -->
+        <div
+          class="fixed inset-0 w-full h-full bg-white flex flex-col gap-12 justify-center px-12 md:px-20 z-40 transform translate-x-full transition-transform duration-1000 text-xl sm:text-3xl font-bold mobile-menu"
+        >
+          <!-- HOME with sub menu -->
+          <div class="relative">
+            <div class="flex items-center gap-2 menu-link">
+              <a href="./index.html">HOME</a>
+
+              <button id="mobileHomeToggle">
+                <i
+                  id="mobileCaret"
+                  class="fa-solid fa-chevron-down text-lg"
+                ></i>
+              </button>
+            </div>
+
+            <div
+              class="mt-4 hidden absolute bg-white rounded-lg z-40 w-40 px-6 py-6 text-2xl"
+              id="mobileHomeMenu"
+            >
+              <a class="block mobile-home-item mb-3" href="./404.html"
+                >Home 2</a
+              >
+            </div>
+          </div>
+
+          <a class="menu-link" href="./404.html">ABOUT</a>
+          <a class="menu-link" href="./404.html">SERVICES</a>
+          <a class="menu-link" href="./404.html">PRICING</a>
+          <a class="menu-link" href="./404.html">CONTACT</a>
+          <a class="menu-link" href="./404.html">GET CONSULTATION</a>
+          <button
+            class="close-menu text-2xl cursor-pointer absolute top-10 right-12 p-4 border border-white/20 rounded-full"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- HOME -->
+      <main id="home" class="max-w-7xl mx-auto w-full mt-28 overflow-hidden">
+        <div
+          class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 px-3 xsm:px-4 xsmd:6 py-6 overflow-hidden"
+        >
+          <!-- LEFT -->
+          <div class="profile-wrapper relative h-full">
+            <!-- OUTER SOFT CONTAINER -->
+            <div
+              class="profile-container bg-white p-2.5 rounded-[48px] shadow-inner overflow-hidden"
+            >
+              <!-- INNER CARD -->
+              <div
+                class="profile-card relative bg-gray-200 rounded-[40px] overflow-hidden"
+              >
+                <!-- IMAGE -->
+                <img
+                  src="./src/assets/home.webp"
+                  class="profile-image h-125 w-full object-cover object-top"
+                />
+
+                <!-- DARK GRADIENT OVERLAY -->
+                <div
+                  class="absolute bottom-0 left-0 w-full h-1/2 bg-linear-to-t from-black/80 to-transparent"
+                ></div>
+
+                <!-- TOP RIGHT SOCIALS -->
+                <div
+                  class="profile-social absolute top-6 right-6 flex flex-col gap-4 z-20"
+                >
+                  <a
+                    href="./404.html"
+                    class="card-social w-10 h-10 bg-white rounded-full shadow flex items-center justify-center"
+                  >
+                    <i class="fa-brands fa-x-twitter"></i>
+                  </a>
+                  <a
+                    href="./404.html"
+                    class="card-social w-10 h-10 bg-white rounded-full shadow flex items-center justify-center"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="./404.html"
+                    class="card-social w-10 h-10 bg-white rounded-full shadow flex items-center justify-center"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </div>
+
+                <!-- VERTICAL BADGE -->
+                <div
+                  class="profile-badge absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white px-6 py-4 rounded-4xl shadow flex items-center gap-3 -rotate-90"
+                >
+                  <span class="relative top-3">Available for Work</span>
+                  <span
+                    class="w-2 h-2 bg-primary rounded-full relative top-3.5"
+                  ></span>
+                </div>
+
+                <!-- BOTTOM CONTENT -->
+                <div
+                  class="profile-content absolute bottom-8 pl-8 md:left-10 z-20 text-white"
+                >
+                  <h2 class="text-4xl font-semibold mb-3">Hey, I’m Joshi</h2>
+
+                  <p class="text-white/80 max-w-md mb-6">FULLSTACK DEVELOPER</p>
+
+                  <div class="flex flex-wrap items-center gap-4">
+                    <a
+                      href="./404.html"
+                      class="bg-primary text-black border-2 border-primary px-6 py-2 rounded-full m-0"
+                    >
+                      Hire Me
+                    </a>
+
+                    <a
+                      href="./404.html"
+                      class="text-white px-6 py-2 rounded-full border-2 border-white"
+                    >
+                      Download CV
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div
+            class="creative-section flex items-center relative xl:col-span-2 rounded-[48px] shadow-inner bg-white p-2.5"
+          >
+            <div
+              class="creative-wrapper relative mx-auto w-full bg-gray-100 rounded-[40px] h-full flex flex-col justify-center px-6 py-6"
+            >
+              <!-- SOFT WHITE GRADIENT -->
+              <div
+                class="absolute inset-0 bg-linear-to-r from-white via-gray-100 to-primary/50 rounded-[40px] h-full"
+              ></div>
+
+              <!-- TOP BADGE -->
+              <div class="creative-top mb-8">
+                <button
+                  class="hero-badge border border-gray-300 rounded-full px-6 py-2 text-sm flex items-center gap-2"
+                >
+                  welcome to my profile
+                </button>
+              </div>
+
+              <!-- MAIN CONTENT -->
+              <div class="">
+                <!-- LEFT TEXT -->
+                <div class="creative-left">
+                  <div
+                    class="round-text absolute right-1 top-2 w-18.75 h-18.75 md:h-25 md:w-25 lg:w-37.5 lg:h-37.5"
+                  >
+                    <svg viewBox="0 0 200 200" width="200" height="200">
+                      <!-- circle path -->
+                      <defs>
+                        <path
+                          id="circlePath"
+                          d="M 100,100
+           m -80,0
+           a 80,80 0 1,1 160,0
+           a 80,80 0 1,1 -160,0"
+                        />
+                      </defs>
+
+                      <!-- text on path -->
+                      <text
+                        class="text-[15px] font-semibold"
+                        letter-spacing="3"
+                      >
+                        <textPath href="#circlePath">
+                          FULL STACK DEVELOPER • FULL STACK DEVELOPER •
+                        </textPath>
+                      </text>
+                    </svg>
+                  </div>
+
+                  <h2
+                    class="creative-heading text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.15] font-serif text-black/60 mb-10"
+                  >
+                    I’m building websites & brands that people remember
+                  </h2>
+
+                  <div class="creative-stats flex gap-5 sm:gap-8 lg:gap-16">
+                    <div class="stats">
+                      <h3
+                        class="text-3xl lg:text-5xl font-fourthery font-semibold"
+                      >
+                        550<span class="text-primary">k</span>
+                      </h3>
+                      <p
+                        class="text-gray-500 text-[10px] sm:text-sm tracking-wider mt-2"
+                      >
+                        WEBSITES BUILT
+                      </p>
+                    </div>
+                    <div class="stats">
+                      <h3
+                        class="text-3xl lg:text-5xl font-fourthery font-semibold"
+                      >
+                        12<span class="text-primary">+</span>
+                      </h3>
+                      <p
+                        class="text-gray-500 text-[10px] sm:text-sm tracking-wider mt-2"
+                      >
+                        YEARS OF EXPERIENCE
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- ABOUT -->
+      <section
+        class="about-section max-w-7xl mx-auto py-8 px-3 xsm:px-4 xsmd:6 overflow-hidden"
+      >
+        <div class="container-main py-12 px-4 md:px-6 bg-white rounded-3xl">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <!-- LEFT CONTENT -->
+            <div class="about-left">
+              <p class="about-mini text-sm text-gray-500 mb-6">About me</p>
+
+              <h2
+                class="about-heading text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-black"
+              >
+                Professional
+                <span class="text-primary">Problem Solutions</span>
+                For Digital Products
+              </h2>
+
+              <p class="about-desc text-gray-500 mt-6 max-w-lg leading-relaxed">
+                Delivering scalable and efficient solutions for modern digital
+                challenges. Combining innovation, strategy, and technology to
+                build impactful products. Focused on performance, usability, and
+                long-term business value.
+              </p>
+
+              <!-- Features -->
+              <div class="about-features grid grid-cols-2 gap-6 mt-10">
+                <div class="feature-item flex items-center gap-3">
+                  <i class="fa-solid fa-check text-primary"></i>
+                  <span class="text-gray-700">Branding & Design</span>
+                </div>
+
+                <div class="feature-item flex items-center gap-3">
+                  <i class="fa-solid fa-check text-primary"></i>
+                  <span class="text-gray-700">Digital Marketing</span>
+                </div>
+
+                <div class="feature-item flex items-center gap-3">
+                  <i class="fa-solid fa-check text-primary"></i>
+                  <span class="text-gray-700">Web Development</span>
+                </div>
+
+                <div class="feature-item flex items-center gap-3">
+                  <i class="fa-solid fa-check text-primary"></i>
+                  <span class="text-gray-700">Product Design</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="about-right relative flex justify-center">
+              <img
+                src="./src/assets/about.webp"
+                alt="about"
+                class="about-image rounded-xl w-full max-w-md"
+              />
+
+              <!-- Floating Tags -->
+
+              <div
+                class="floating-tag tag-hover absolute top-4 -right-2 bg-white shadow-lg px-6 py-3 rounded-full flex items-center gap-3 transition duration-300"
+              >
+                <i class="fa-solid fa-briefcase text-primary"></i>
+                <span class="text-sm font-medium">Experience Designer</span>
+              </div>
+
+              <div
+                class="floating-tag2 tag-hover absolute bottom-8 -left-8 bg-white shadow-lg px-6 py-3 rounded-full flex items-center gap-3 transition duration-300"
+              >
+                <img
+                  src="./src/assets/about.webp"
+                  alt="about"
+                  class="w-8 h-8 rounded-full"
+                />
+                <span class="text-sm font-medium">Mark J. Collins</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPEREINCE -->
+      <section
+        class="experience-section max-w-7xl mx-auto py-8 px-3 xsm:px-4 xsmd:6 overflow-hidden"
+      >
+        <div class="py-12 px-4 md:px-6 bg-white rounded-3xl">
+          <!-- HEADER -->
+          <div class="grid lg:grid-cols-2 gap-10 items-start mb-20 exp-header">
+            <div class="relative">
+              <span
+                class="text-primary font-semibold text-sm tracking-wider z-10"
+              >
+                MY EXPERIENCE
+              </span>
+
+              <h2
+                class="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 leading-tight"
+              >
+                EXPERIENCE AND <span class="text-primary">SKILL</span>
+              </h2>
+
+              <!-- Faded Background Word -->
+              <div
+                class="absolute -top-10 left-0 text-5xl md:text-8xl font-bold text-gray-100 select-none pointer-events-none z-[-1]"
+              >
+                CAREER
+              </div>
+            </div>
+
+            <div
+              class="border-l-4 border-primary pl-6 text-gray-600 text-lg leading-relaxed"
+            >
+              All You Need To Do Your Best Work Together In One Package Works
+              Seamlessly Computer
+            </div>
+          </div>
+
+          <!-- CARDS -->
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 exp-grid">
+            <!-- CARD -->
+            <div
+              class="exp-card exp-card-hover relative border border-gray-200 p-10 overflow-hidden"
+            >
+              <div
+                class="absolute top-6 right-6 text-6xl font-bold text-gray-100 select-none"
+              >
+                01
+              </div>
+
+              <span class="text-primary font-semibold text-sm">
+                2011 – 2014 (UI DESIGNER)
+              </span>
+
+              <h3 class="text-2xl font-bold mt-4">GOOGLE CORPORATION.</h3>
+
+              <p class="text-gray-600 mt-4 leading-relaxed">
+                All you need to do, is your best work together one package works
+                among seamlessly in computer daily.
+              </p>
+
+              <div class="mt-8 h-0.75 bg-gray-200 relative">
+                <div
+                  class="exp-line absolute left-0 top-0 h-0.75 bg-primary w-1/2"
+                ></div>
+              </div>
+            </div>
+
+            <!-- CARD -->
+            <div
+              class="exp-card exp-card-hover relative border border-gray-200 p-10 overflow-hidden"
+            >
+              <div
+                class="absolute top-6 right-6 text-6xl font-bold text-gray-100 select-none"
+              >
+                02
+              </div>
+
+              <span class="text-primary font-semibold text-sm">
+                2014 – 2018 (UI DESIGNER)
+              </span>
+
+              <h3 class="text-2xl font-bold mt-4">APPLE PRODUCT CO.</h3>
+
+              <p class="text-gray-600 mt-4 leading-relaxed">
+                Delivered intuitive UI designs that enhanced user experience and
+                improved product usability across digital platforms.
+              </p>
+
+              <div class="mt-8 h-0.75 bg-gray-200 relative">
+                <div
+                  class="exp-line absolute left-0 top-0 h-0.75 bg-primary w-2/3"
+                ></div>
+              </div>
+            </div>
+
+            <!-- CARD -->
+            <div
+              class="exp-card exp-card-hover relative border border-gray-200 p-10 overflow-hidden"
+            >
+              <div
+                class="absolute top-6 right-6 text-6xl font-bold text-gray-100 select-none"
+              >
+                03
+              </div>
+
+              <span class="text-primary font-semibold text-sm">
+                2018 – 2021 (WEB DEVELOPER)
+              </span>
+
+              <h3 class="text-2xl font-bold mt-4">LEAD DESIGNER MUSIC.</h3>
+
+              <p class="text-gray-600 mt-4 leading-relaxed">
+                Developed and maintained scalable web applications by
+                integrating frontend and backend to deliver user experiences.
+              </p>
+
+              <div class="mt-8 h-0.75 bg-gray-200 relative">
+                <div
+                  class="exp-line absolute left-0 top-0 h-0.75 bg-primary w-3/4"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROGRESS -->
+      <section
+        class="skill-section max-w-7xl mx-auto py-8 px-3 xsm:px-4 xsmd:6 overflow-hidden"
+      >
+        <div class="py-12 px-4 md:px-6 bg-white rounded-3xl relative">
+          <div class="mb-12">
+            <span
+              class="text-primary font-semibold text-sm tracking-wider z-10"
+            >
+              Technical Expertise
+            </span>
+
+            <h2 class="text-3xl font-bold mt-4">
+              A curated stack of technologies, frameworks, and tools powering my
+              full stack development work.
+              <span class="text-primary">SKILL</span>
+            </h2>
+          </div>
+
+          <!-- Faded Background Word -->
+          <div
+            class="absolute right-0 top-0 text-8xl font-bold text-gray-100 select-none pointer-events-none"
+          >
+            <i class="fa-solid fa-quote-right"></i>
+          </div>
+          <!-- GRID -->
+          <div class="grid md:grid-cols-2 gap-16">
+            <!-- SKILL ITEM -->
+            <div
+              class="skill-card space-y-6 border border-gray-200 p-10 overflow-hidden relative"
+            >
+              <div class="flex justify-between items-center">
+                <h4
+                  class="skill-title text-black tracking-widest uppercase text-sm font-semibold"
+                >
+                  Web Development
+                </h4>
+                <span class="text-primary font-semibold text-sm"> 65% </span>
+              </div>
+
+              <div
+                class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden"
+              >
+                <div
+                  class="progress-fill progress-65 h-full bg-primary rounded-full w-0"
+                ></div>
+              </div>
+            </div>
+
+            <!-- SKILL ITEM -->
+            <div
+              class="skill-card space-y-6 border border-gray-200 p-10 overflow-hidden"
+            >
+              <div class="flex justify-between items-center">
+                <h4
+                  class="skill-title text-black tracking-widest uppercase text-sm font-semibold"
+                >
+                  Graphics Design
+                </h4>
+                <span class="text-primary font-semibold text-sm"> 82% </span>
+              </div>
+
+              <div
+                class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden"
+              >
+                <div
+                  class="progress-fill progress-82 h-full bg-primary rounded-full w-0"
+                ></div>
+              </div>
+            </div>
+
+            <!-- SKILL ITEM -->
+            <div
+              class="skill-card space-y-6 border border-gray-200 p-10 overflow-hidden"
+            >
+              <div class="flex justify-between items-center">
+                <h4
+                  class="skill-title text-black tracking-widest uppercase text-sm font-semibold"
+                >
+                  Digital Marketing
+                </h4>
+                <span class="text-primary font-semibold text-sm"> 72% </span>
+              </div>
+
+              <div
+                class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden"
+              >
+                <div
+                  class="progress-fill progress-72 h-full bg-primary rounded-full w-0"
+                ></div>
+              </div>
+            </div>
+
+            <!-- SKILL ITEM -->
+            <div
+              class="skill-card space-y-6 border border-gray-200 p-10 overflow-hidden"
+            >
+              <div class="flex justify-between items-center">
+                <h4
+                  class="skill-title text-black tracking-widest uppercase text-sm font-semibold"
+                >
+                  Lead Generation
+                </h4>
+                <span class="text-primary font-semibold text-sm"> 90% </span>
+              </div>
+
+              <div
+                class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden"
+              >
+                <div
+                  class="progress-fill progress-90 h-full bg-primary rounded-full w-0"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section
+        class="services-section max-w-7xl mx-auto py-8 px-3 xsm:px-4 xsmd:6 overflow-hidden relative"
+      >
+        <div class="py-12 px-4 md:px-6 bg-white rounded-3xl">
+          <!-- Heading -->
+          <div class="services-heading text-center max-w-3xl mx-auto">
+            <p class="text-gray-400 mb-4">Popular Services</p>
+
+            <h2
+              class="services-title text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-gray-900"
+            >
+              My <span class="text-primary">Special Service</span> For your
+              Business Development
+            </h2>
+          </div>
+
+          <!-- Cards -->
+          <div
+            class="services-grid mt-20 grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
+            <!-- CARD -->
+            <div
+              class="service-card service-card-hover bg-gray-50 border border-gray-200 rounded-2xl p-8 flex items-center justify-between"
+            >
+              <div class="flex items-start gap-6">
+                <span class="text-gray-400 text-lg font-medium">01</span>
+
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                    Brand Identity Design
+                  </h3>
+                  <p class="text-gray-500 text-sm">
+                    Creating strong and memorable brand identities that
+                    communicate values and build lasting recognition.
+                  </p>
+                </div>
+              </div>
+
+              <!-- icon -->
+              <div>
+                <a
+                  href="./404.html"
+                  class="service-arrow w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center transition duration-300"
+                >
+                  <i class="fa-solid fa-arrow-up text-sm"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Cards -->
+
+            <div
+              class="service-card service-card-hover bg-gray-50 border border-gray-200 rounded-2xl p-8 flex items-center justify-between"
+            >
+              <div class="flex items-start gap-6">
+                <span class="text-gray-400 text-lg font-medium">02</span>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                    Website Design
+                  </h3>
+                  <p class="text-gray-500 text-sm">
+                    Designing modern, responsive websites focused on user
+                    experience, visual appeal, and usability.
+                  </p>
+                </div>
+              </div>
+              <!-- icon -->
+              <div>
+                <a
+                  href="./404.html"
+                  class="service-arrow w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center transition duration-300"
+                >
+                  <i class="fa-solid fa-arrow-up text-sm"></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="service-card service-card-hover bg-gray-50 border border-gray-200 rounded-2xl p-8 flex items-center justify-between"
+            >
+              <div class="flex items-start gap-6">
+                <span class="text-gray-400 text-lg font-medium">03</span>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                    Mobile Application Design
+                  </h3>
+                  <p class="text-gray-500 text-sm">
+                    Crafting intuitive and engaging mobile interfaces for
+                    seamless user interaction across devices.
+                  </p>
+                </div>
+              </div>
+              <!-- icon -->
+              <div>
+                <a
+                  href="./404.html"
+                  class="service-arrow w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center transition duration-300"
+                >
+                  <i class="fa-solid fa-arrow-up text-sm"></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="service-card service-card-hover bg-gray-50 border border-gray-200 rounded-2xl p-8 flex items-center justify-between"
+            >
+              <div class="flex items-start gap-6">
+                <span class="text-gray-400 text-lg font-medium">04</span>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                    Motion Graphics Design
+                  </h3>
+                  <p class="text-gray-500 text-sm">
+                    Producing dynamic motion visuals and animations that enhance
+                    digital storytelling and engagement.
+                  </p>
+                </div>
+              </div>
+              <!-- icon -->
+              <div>
+                <a
+                  href="./404.html"
+                  class="service-arrow w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center transition duration-300"
+                >
+                  <i class="fa-solid fa-arrow-up text-sm"></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="service-card service-card-hover bg-gray-50 border border-gray-200 rounded-2xl p-8 flex items-center justify-between"
+            >
+              <div class="flex items-start gap-6">
+                <span class="text-gray-400 text-lg font-medium">05</span>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                    Website Development
+                  </h3>
+                  <p class="text-gray-500 text-sm">
+                    Building fast, secure, and scalable websites using modern
+                    technologies and best development practices.
+                  </p>
+                </div>
+              </div>
+              <!-- icon -->
+              <div>
+                <a
+                  href="./404.html"
+                  class="service-arrow w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center transition duration-300"
+                >
+                  <i class="fa-solid fa-arrow-up text-sm"></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="service-card service-card-hover bg-gray-50 border border-gray-200 rounded-2xl p-8 flex items-center justify-between"
+            >
+              <div class="flex items-start gap-6">
+                <span class="text-gray-400 text-lg font-medium">06</span>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                    SEO & Digital Marketing
+                  </h3>
+                  <p class="text-gray-500 text-sm">
+                    Improving online visibility through search optimization and
+                    strategic digital marketing solutions.
+                  </p>
+                </div>
+              </div>
+              <!-- icon -->
+              <div>
+                <a
+                  href="./404.html"
+                  class="service-arrow w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center transition duration-300"
+                >
+                  <i class="fa-solid fa-arrow-up text-sm"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOGS -->
+      <section
+        class="blog-section max-w-7xl mx-auto py-8 px-3 xsm:px-4 xsmd:6 overflow-hidden"
+      >
+        <div class="py-12 px-4 md:px-6 bg-white rounded-3xl">
+          <!-- Heading -->
+          <div class="blog-heading text-center max-w-3xl mx-auto mb-20">
+            <p class="text-gray-400 mb-4">New & Blog</p>
+
+            <h2 class="blog-title text-5xl font-semibold text-gray-900">
+              Latest News & <span class="text-primary">Blog</span>
+            </h2>
+          </div>
+
+          <!-- Blog Grid -->
+          <div class="blog-grid grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- CARD 1 -->
+            <div
+              class="blog-card blog-card-hover bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden flex flex-col mdx:flex-row"
+            >
+              <div class="h-56 mdx:h-full mdx:w-2/5 overflow-hidden">
+                <img
+                  src="./src/assets/b1.webp"
+                  alt="blogs"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <div class="mdx:w-3/5 p-8 flex flex-col justify-center">
+                <div class="flex items-center text-gray-400 text-sm mb-4 gap-2">
+                  <i class="fa-regular fa-calendar"></i>
+                  <span>NOVEMBER 13, 2023</span>
+                </div>
+
+                <h3
+                  class="text-xl font-semibold text-gray-900 mb-6 leading-snug"
+                >
+                  A Beginner’s Guide to Running Adventures
+                </h3>
+
+                <a
+                  href="./404.html"
+                  class="blog-read text-gray-800 font-medium transition duration-300"
+                >
+                  Read More
+                  <i
+                    class="fa-solid fa-arrow-up-right-from-square ml-1 text-sm"
+                  ></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div
+              class="blog-card blog-card-hover bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden flex flex-col mdx:flex-row"
+            >
+              <div class="h-56 mdx:h-full mdx:w-2/5 overflow-hidden">
+                <img
+                  src="./src/assets/b2.webp"
+                  alt="blogs"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <div class="mdx:w-3/5 p-8 flex flex-col justify-center">
+                <div class="flex items-center text-gray-400 text-sm mb-4 gap-2">
+                  <i class="fa-regular fa-calendar"></i>
+                  <span>JANUARY 13, 2024</span>
+                </div>
+
+                <h3
+                  class="text-xl font-semibold text-gray-900 mb-6 leading-snug"
+                >
+                  Mastering the Art of Sustainable Living
+                </h3>
+
+                <a
+                  href="./404.html"
+                  class="blog-read text-gray-800 font-medium transition duration-300"
+                >
+                  Read More
+                  <i
+                    class="fa-solid fa-arrow-up-right-from-square ml-1 text-sm"
+                  ></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div
+              class="blog-card blog-card-hover bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden flex flex-col mdx:flex-row"
+            >
+              <div class="h-56 mdx:h-full mdx:w-2/5 overflow-hidden">
+                <img
+                  src="./src/assets/b3.webp"
+                  alt="blogs"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <div class="mdx:w-3/5 p-8 flex flex-col justify-center">
+                <div class="flex items-center text-gray-400 text-sm mb-4 gap-2">
+                  <i class="fa-regular fa-calendar"></i>
+                  <span>FEBRUARY 27, 2024</span>
+                </div>
+
+                <h3
+                  class="text-xl font-semibold text-gray-900 mb-6 leading-snug"
+                >
+                  Embracing : A Lifestyle Revolution
+                </h3>
+
+                <a
+                  href="./404.html"
+                  class="blog-read text-gray-800 font-medium transition duration-300"
+                >
+                  Read More
+                  <i
+                    class="fa-solid fa-arrow-up-right-from-square ml-1 text-sm"
+                  ></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div
+              class="blog-card blog-card-hover bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden flex flex-col mdx:flex-row"
+            >
+              <div class="h-56 mdx:h-full mdx:w-2/5 overflow-hidden">
+                <img
+                  src="./src/assets/b4.webp"
+                  alt="blogs"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <div class="mdx:w-3/5 p-8 flex flex-col justify-center">
+                <div class="flex items-center text-gray-400 text-sm mb-4 gap-2">
+                  <i class="fa-regular fa-calendar"></i>
+                  <span>JUNE 16, 2025</span>
+                </div>
+
+                <h3
+                  class="text-xl font-semibold text-gray-900 mb-6 leading-snug"
+                >
+                  Savoring the Art of Homemade Sushi..
+                </h3>
+
+                <a
+                  href="./404.html"
+                  class="blog-read text-gray-800 font-medium transition duration-300"
+                >
+                  Read More
+                  <i
+                    class="fa-solid fa-arrow-up-right-from-square ml-1 text-sm"
+                  ></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section
+        class="faq-wrapper max-w-7xl mx-auto py-8 px-3 xsm:px-4 xsmd:6 overflow-hidden"
+      >
+        <div class="py-12 px-4 md:px-6 bg-white rounded-3xl">
+          <div class="grid md:grid-cols-2 gap-16">
+            <!-- LEFT SIDE -->
+            <div
+              class="faq-left bg-primary/30 rounded-3xl p-4 md:p-8 lg:p-12 relative overflow-hidden"
+            >
+              <div class="relative z-10">
+                <div class="mb-6">
+                  <span
+                    class="flex items-center gap-2 text-primary font-semibold text-sm"
+                  >
+                    <i class="fa-solid fa-paperclip"></i> FAQS
+                  </span>
+                </div>
+
+                <h2 class="text-4xl font-bold mb-4 leading-tight">
+                  Frequently Asked <br />
+                  Questions
+                </h2>
+
+                <p class="text-gray-600 mb-12 max-w-sm">
+                  Answers to common questions about my portfolio and services.
+                </p>
+
+                <h3 class="text-xl font-semibold mb-6">
+                  Still Need Assistance?
+                </h3>
+
+                <div class="space-y-6">
+                  <a
+                    href="./404.html"
+                    class="assist-hover bg-white p-6 rounded-2xl flex items-center gap-4 shadow-sm"
+                  >
+                    <div
+                      class="w-12 h-12 bg-primary text-white flex items-center justify-center rounded-full icon-hover"
+                    >
+                      <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <span class="font-medium">Contact us</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="faq-right space-y-8 py-6">
+              <!-- ITEM -->
+              <div
+                class="faq-row border-b border-gray-200 pb-6 faq-row-hover cursor-pointer"
+              >
+                <div class="faq-header flex justify-between items-center">
+                  <div class="flex items-center gap-3">
+                    <h4 class="font-semibold">What services do you offer?</h4>
+                  </div>
+
+                  <i
+                    class="fa-solid fa-chevron-right faq-icon text-gray-400"
+                  ></i>
+                </div>
+
+                <div class="faq-content overflow-hidden">
+                  <div class="pt-4 text-gray-600 leading-relaxed">
+                    I provide UI/UX design, frontend development, branding, and
+                    modern interactive web experiences tailored for startups and
+                    businesses.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="faq-row border-b border-gray-200 pb-6 faq-row-hover cursor-pointer"
+              >
+                <div class="faq-header flex justify-between items-center">
+                  <h4 class="font-semibold">How long does a project take?</h4>
+                  <i
+                    class="fa-solid fa-chevron-right faq-icon text-gray-400"
+                  ></i>
+                </div>
+
+                <div class="faq-content overflow-hidden">
+                  <div class="pt-4 text-gray-600 leading-relaxed">
+                    Most projects range from 2 to 6 weeks depending on scope and
+                    complexity.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="faq-row border-b border-gray-200 pb-6 faq-row-hover cursor-pointer"
+              >
+                <div class="faq-header flex justify-between items-center">
+                  <h4 class="font-semibold">
+                    How much do your SEO services cost?
+                  </h4>
+                  <i
+                    class="fa-solid fa-chevron-right faq-icon text-gray-400"
+                  ></i>
+                </div>
+
+                <div class="faq-content overflow-hidden">
+                  <div class="pt-4 text-gray-600 leading-relaxed">
+                    The cost of our SEO services varies depending on several
+                    factors, including the scope of the project, the level of
+                    competition in your industry, and the specific goals budget.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="faq-row border-b border-gray-200 pb-6 faq-row-hover cursor-pointer"
+              >
+                <div class="faq-header flex justify-between items-center">
+                  <h4 class="font-semibold">
+                    Do you redesign existing websites?
+                  </h4>
+                  <i
+                    class="fa-solid fa-chevron-right faq-icon text-gray-400"
+                  ></i>
+                </div>
+
+                <div class="faq-content overflow-hidden">
+                  <div class="pt-4 text-gray-600 leading-relaxed">
+                    Yes, I analyze your current site and redesign it for better
+                    performance, usability and conversion optimization.
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-row cursor-pointer">
+                <div class="faq-header flex justify-between items-center">
+                  <h4 class="font-semibold">
+                    How can we start working together?
+                  </h4>
+                  <i
+                    class="fa-solid fa-chevron-right faq-icon text-gray-400"
+                  ></i>
+                </div>
+
+                <div class="faq-content overflow-hidden">
+                  <div class="pt-4 text-gray-600 leading-relaxed">
+                    Simply contact me through the portfolio form and I’ll
+                    respond within 24 hours.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section
+        class="contact-section max-w-7xl mx-auto py-8 px-3 xsm:px-4 xsmd:6 overflow-hidden"
+      >
+        <div
+          class="py-12 px-4 md:px-6 bg-white rounded-3xl grid lg:grid-cols-2 gap-16 items-start"
+        >
+          <!-- LEFT CONTENT -->
+          <div class="contact-left">
+            <p class="contact-badge text-gray-500 mb-4">Get In Touch</p>
+
+            <h2 class="contact-title text-5xl font-semibold leading-tight mb-6">
+              Let’s Talk For your <br />
+              <span class="text-primary">Next Projects</span>
+            </h2>
+
+            <p class="contact-desc text-gray-500 mb-10 max-w-md">
+              Sed ut perspiciatis unde omnis natus totam rem aperiam eaque
+              inventore veritatis
+            </p>
+
+            <ul class="space-y-5">
+              <li class="feature-item flex items-center gap-4">
+                <div
+                  class="w-8 h-8 bg-primary rounded-full flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-check text-white text-sm"></i>
+                </div>
+                <span>5+ Years Of Experience</span>
+              </li>
+
+              <li class="feature-item flex items-center gap-4">
+                <div
+                  class="w-8 h-8 bg-primary rounded-full flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-check text-white text-sm"></i>
+                </div>
+                <span>Professional Web Designer</span>
+              </li>
+
+              <li class="feature-item flex items-center gap-4">
+                <div
+                  class="w-8 h-8 bg-primary rounded-full flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-check text-white text-sm"></i>
+                </div>
+                <span>Mobile Apps Design</span>
+              </li>
+
+              <li class="feature-item flex items-center gap-4">
+                <div
+                  class="w-8 h-8 bg-primary rounded-full flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-check text-white text-sm"></i>
+                </div>
+                <span>Custom Design Support</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- FORM -->
+          <div class="contact-form-wrap">
+            <form id="contactForm" class="contact-form grid grid-cols-2 gap-6">
+              <div class="form-group">
+                <label>Full Name *</label>
+                <input
+                  required
+                  type="text"
+                  class="input-field w-full mt-2 border border-gray-200 rounded-xl px-5 py-4 outline-none"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Email Address *</label>
+                <input
+                  required
+                  type="email"
+                  id="emailField"
+                  class="input-field w-full mt-2 border border-gray-200 rounded-xl px-5 py-4 outline-none"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input
+                  required
+                  type="tel"
+                  class="input-field w-full mt-2 border border-gray-200 rounded-xl px-5 py-4 outline-none"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Subject *</label>
+                <input
+                  required
+                  type="text"
+                  class="input-field w-full mt-2 border border-gray-200 rounded-xl px-5 py-4 outline-none"
+                />
+              </div>
+
+              <div class="col-span-2">
+                <label>Textarea *</label>
+                <textarea
+                  required
+                  class="input-field w-full mt-2 border border-gray-200 rounded-xl px-5 py-4 outline-none h-40"
+                ></textarea>
+              </div>
+
+              <!-- ERROR MESSAGE -->
+              <p id="emailError" class="col-span-2 text-red-500 hidden">
+                Accept only @gmail.com email
+              </p>
+
+              <div class="col-span-2">
+                <button
+                  class="submit-btn form-submit bg-primary text-black px-8 py-4 rounded-xl font-medium flex items-center gap-3 cursor-pointer"
+                >
+                  Send Message
+                  <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section
+        class="portfolio-section max-w-7xl mx-auto py-8 px-3 xsm:px-4 xsmd:6 overflow-hidden"
+      >
+        <div class="py-12 px-4 md:px-6 bg-white rounded-3xl">
+          <!-- HEADER -->
+          <div class="text-center mb-16 portfolio-header">
+            <div class="flex items-center justify-center gap-4 mb-4">
+              <span class="h-0.5 w-12 bg-primary"></span>
+              <span class="text-primary font-semibold text-sm">Portfolio</span>
+              <span class="h-0.5 w-12 bg-primary"></span>
+            </div>
+
+            <h2 class="text-4xl font-bold">Selected Standout Projects</h2>
+          </div>
+
+          <!-- GRID -->
+          <div class="grid md:grid-cols-2 gap-10 portfolio-grid">
+            <!-- CARD -->
+            <div class="project-card project-card-hover">
+              <div class="project-image rounded-xl overflow-hidden mb-6">
+                <img
+                  src="./src/assets/p4.webp"
+                  alt="portfolio"
+                  aria-label="portfolio-image"
+                  class="w-full h-96 object-cover object-top"
+                />
+              </div>
+
+              <span class="text-xs font-semibold text-primary uppercase"
+                >Mockup</span
+              >
+
+              <div class="flex justify-between items-center mt-2">
+                <h4 class="text-lg font-semibold">Creative Graphics Design</h4>
+                <a
+                  href="./404.html"
+                  class="project-arrow w-10 h-10 bg-gray-100 flex items-center justify-center rounded-md"
+                >
+                  <i class="fa-solid fa-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="project-card project-card-hover">
+              <div class="project-image rounded-xl overflow-hidden mb-6">
+                <img
+                  src="./src/assets/p3.webp"
+                  alt="portfolio"
+                  aria-label="portfolio-image"
+                  class="w-full h-96 object-cover object-top"
+                />
+              </div>
+
+              <span class="text-xs font-semibold text-primary uppercase"
+                >Frontend Design</span
+              >
+
+              <div class="flex justify-between items-center mt-2">
+                <h4 class="text-lg font-semibold">Creative Frontend Design</h4>
+                <a
+                  href="./404.html"
+                  class="project-arrow w-10 h-10 bg-gray-100 flex items-center justify-center rounded-md"
+                >
+                  <i class="fa-solid fa-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="project-card project-card-hover">
+              <div class="project-image rounded-xl overflow-hidden mb-6">
+                <img
+                  src="./src/assets/p2.webp"
+                  alt="portfolio"
+                  aria-label="portfolio-image"
+                  class="w-full h-96 object-cover object-top"
+                />
+              </div>
+
+              <span class="text-xs font-semibold text-primary uppercase"
+                >Product Design</span
+              >
+
+              <div class="flex justify-between items-center mt-2">
+                <h4 class="text-lg font-semibold">Design & Branding Mockup</h4>
+                <a
+                  href="./404.html"
+                  class="project-arrow w-10 h-10 bg-gray-100 flex items-center justify-center rounded-md"
+                >
+                  <i class="fa-solid fa-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="project-card project-card-hover">
+              <div class="project-image rounded-xl overflow-hidden mb-6">
+                <img
+                  src="./src/assets/p1.webp"
+                  alt="portfolio"
+                  aria-label="portfolio-image"
+                  class="w-full h-96 object-cover object-top"
+                />
+              </div>
+
+              <span class="text-xs font-semibold text-primary uppercase"
+                >Mockup</span
+              >
+
+              <div class="flex justify-between items-center mt-2">
+                <h4 class="text-lg font-semibold">Paper & Box Covers Design</h4>
+                <a
+                  href="./404.html"
+                  class="project-arrow w-10 h-10 bg-gray-100 flex items-center justify-center rounded-md"
+                >
+                  <i class="fa-solid fa-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer
+        class="footer-section max-w-7xl mx-auto py-8 px-3 xsm:px-4 xsmd:6 overflow-hidden"
+      >
+        <div
+          class="py-12 px-4 md:px-6 bg-white shadow-inner rounded-3xl footer-start relative"
+        >
+          <!-- Faded Background Word -->
+          <div
+            class="absolute top-0 left-6 text-5xl md:text-8xl font-bold text-white select-none pointer-events-none"
+          >
+            CAREER
+          </div>
+
+          <!-- LOGO -->
+          <div class="footer-logo text-center mb-10">
+            <h2
+              class="text-2xl font-semibold flex items-center justify-center gap-2 mb-4"
+            >
+              <span class="text-gray-900">STACKLY</span>
+            </h2>
+            <p class="text-sm max-w-xl mx-auto text-gray-600">
+              Stay Ahead of the Competition Smart Digital Marketing Social Media
+              Integration, Expand your brand’s reach through strategic social
+              media marketing.
+            </p>
+          </div>
+
+          <!-- NAV -->
+          <div
+            class="footer-nav flex flex-wrap justify-center gap-10 text-gray-600 font-medium mb-10"
+          >
+            <a href="./404.html" class="footer-link">HOME</a>
+            <a href="./404.html" class="footer-link">ABOUT</a>
+            <a href="./404.html" class="footer-link">SERVICES</a>
+            <a href="./404.html" class="footer-link">PORTFOLIO</a>
+            <a href="./404.html" class="footer-link">CONTACT</a>
+          </div>
+
+          <!-- SOCIAL -->
+          <div class="footer-social flex flex-wrap justify-center gap-8">
+            <a
+              href="./404.html"
+              class="social-circle w-11 h-11 border border-primary rounded-full flex items-center justify-center text-primary cursor-pointer"
+            >
+              <i
+                class="fa-brands fa-pinterest-p pointer-events-none z-[-1]"
+              ></i>
+            </a>
+
+            <a
+              href="./404.html"
+              class="social-circle w-11 h-11 border border-primary rounded-full flex items-center justify-center text-primary cursor-pointer"
+            >
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a
+              href="./404.html"
+              class="social-circle w-11 h-11 border border-primary rounded-full flex items-center justify-center text-primary cursor-pointer"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a
+              href="./404.html"
+              class="social-circle w-11 h-11 border border-primary rounded-full flex items-center justify-center text-primary cursor-pointer"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </footer>
+
+      <!-- BOTTOM -->
+      <div
+        class="footer-bottom flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto py-8 px-3 xsm:px-8 xsmd:12 border-t border-gray-200"
+      >
+        <p class="text-gray-600">
+          Copyright ©
+          <span class="text-primary font-medium">stackly , 2026</span>
+        </p>
+
+        <div class="flex gap-10 text-gray-600">
+          <a href="./404.html" class="footer-link">Terms & Conditions</a>
+          <a href="./404.html" class="footer-link">Privacy Policy</a>
+        </div>
+      </div>
+
+      <!-- SCROLL TOP -->
+      <div class="scroll-wrapper fixed bottom-8 right-8 z-50 opacity-0 scale-0">
+        <div
+          class="scroll-top-btn relative w-14 h-14 rounded-full flex items-center justify-center cursor-pointer bg-white shadow-lg"
+        >
+          <!-- SVG Circle -->
+          <svg class="absolute inset-0 w-full h-full -rotate-90">
+            <circle
+              cx="28"
+              cy="28"
+              r="24"
+              stroke="#e5e7eb"
+              stroke-width="4"
+              fill="none"
+            />
+            <circle
+              class="progress-circle"
+              cx="28"
+              cy="28"
+              r="24"
+              stroke="#A5C89E"
+              stroke-width="4"
+              fill="none"
+              stroke-dasharray="150"
+              stroke-dashoffset="150"
+            />
+          </svg>
+
+          <!-- Icon -->
+          <i class="fa-solid fa-arrow-up text-primary text-sm"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="./script.js"></script>
+  </body>
+</html>
