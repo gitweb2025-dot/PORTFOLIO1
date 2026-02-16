@@ -56,7 +56,37 @@
   fill: #000; /* text color */
 }
 
+.cv{
+  transition: all 0.3s ease;
+}
+
+.cv:hover{
+  background-color: #A5C89E;
+  color: rgb(0, 0, 0);
+}
+
+/* SERVICE */
+.service-arrow{
+  transition: all 0.6s ease;
+}
+
+.service-arrow:hover{
+  background-color: #A5C89E;
+  color: rgb(0, 0, 0);
+  rotate: 90deg;
+}
+
 /* footer */
+
+.social-circle{
+  transition: all 0.3s ease;
+}
+
+.social-circle:hover{
+  background-color: #A5C89E;
+  color: white;
+  transform: scale(1.1);
+}
 
 .hover-link:hover {
   color: #84cc16;
