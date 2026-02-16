@@ -270,88 +270,175 @@ document.querySelectorAll(".nav-hover").forEach((link) => {
 
 // HOME
 
-/* Card Entrance */
-gsap.from(".profile-card", {
-  y: 50,
-  opacity: 0,
-  duration: 1.2,
-  ease: "power3.out",
-  scrollTrigger: {
-    trigger: ".profile-wrapper",
-    start: "top 85%",
-  },
+window.addEventListener("load", () => {
+  /* initial state */
+  gsap.set(".stackly-text span", { y: 80, opacity: 0 });
+  gsap.set(".stackly-bar", { width: "0%" });
+
+  const tl = gsap.timeline();
+
+  /* letters rise */
+  tl.to(".stackly-text span", {
+    y: 0,
+    opacity: 1,
+    stagger: 0.08,
+    duration: 0.9,
+    ease: "power3.out",
+  })
+
+    /* glow pulse */
+    .to(
+      ".stackly-text span",
+      {
+        color: "#A5C89E",
+        stagger: 0.05,
+        duration: 0.2,
+        yoyo: true,
+        repeat: 1,
+      },
+      "-=.4",
+    )
+
+    /* loading bar */
+    .to(
+      ".stackly-bar",
+      {
+        width: "100%",
+        duration: 1.2,
+        ease: "power2.out",
+      },
+      "-=.3",
+    )
+
+    /* slight pause */
+    .to({}, { duration: 0.3 })
+
+    /* exit animation */
+    .to(
+      ".stackly-text span",
+      {
+        y: -100,
+        opacity: 0,
+        color: "#A5C89E",
+        stagger: 0.05,
+        duration: 0.3,
+      },
+      "-=.4",
+    )
+
+    /* loading bar */
+    .to(
+      ".stackly-bar",
+      {
+        width: "0%",
+        opacity: 0,
+        duration: 1.0,
+        ease: "power2.out",
+      },
+      "-=.3",
+    )
+
+    .to("#stack-loader", {
+      scaleY: 0,
+      opacity: 0,
+      duration: 1.6,
+      ease: "power2.inOut",
+    })
+
+    .set("#stack-loader", { display: "none" });
+
+  /* call your hero animation here if needed */
+  gsap.timeline({
+    delay: 3.9,
+    onComplete: startPageAnimations, // ← runs everything after loader
+  });
 });
 
-/* Image subtle zoom */
-gsap.from(".profile-image", {
-  scale: 1.1,
-  duration: 1.5,
-  ease: "power3.out",
-});
+function startPageAnimations() {
+  /* Card Entrance */
+  gsap.from(".profile-card", {
+    y: 50,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".profile-wrapper",
+      start: "top 85%",
+    },
+  });
 
-/* Bottom content fade up */
-gsap.from(".profile-content", {
-  y: 60,
-  opacity: 0,
-  duration: 1,
-  delay: 0.3,
-  ease: "power3.out",
-});
+  /* Image subtle zoom */
+  gsap.from(".profile-image", {
+    scale: 1.1,
+    duration: 1.5,
+    ease: "power3.out",
+  });
 
-/* Floating social micro motion */
-gsap.to(".card-social", {
-  y: -6,
-  repeat: -1,
-  yoyo: true,
-  duration: 2,
-  ease: "sine.inOut",
-  stagger: 0.2,
-});
+  /* Bottom content fade up */
+  gsap.from(".profile-content", {
+    y: 60,
+    opacity: 0,
+    duration: 1,
+    delay: 0.3,
+    ease: "power3.out",
+  });
 
-/* Hero Batch */
-gsap.from(".hero-badge", {
-  y: 80,
-  opacity: 0,
-  duration: 0.8,
-  ease: "power3.out",
-  scrollTrigger: {
-    trigger: ".creative-top",
-    start: "top 80%",
-  },
-});
+  /* Floating social micro motion */
+  gsap.to(".card-social", {
+    y: -6,
+    repeat: -1,
+    yoyo: true,
+    duration: 2,
+    ease: "sine.inOut",
+    stagger: 0.2,
+  });
 
-/* Heading reveal */
-gsap.from(".creative-heading", {
-  y: 80,
-  opacity: 0,
-  duration: 1.2,
-  ease: "power3.out",
-  scrollTrigger: {
-    trigger: ".creative-section",
-    start: "top 80%",
-  },
-});
+  /* Hero Badge */
+  gsap.from(".hero-badge", {
+    y: 80,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".creative-top",
+      start: "top 80%",
+    },
+  });
 
-/* Stats stagger */
-gsap.from(".creative-stats .stats", {
-  y: 40,
-  opacity: 0,
-  stagger: 0.2,
-  duration: 1,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".creative-stats",
-    start: "top 85%",
-  },
-});
+  /* Heading reveal */
+  gsap.from(".creative-heading", {
+    y: 80,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".creative-section",
+      start: "top 80%",
+    },
+  });
 
-gsap.to(".round-text svg", {
-  rotate: 360,
-  duration: 12,
-  ease: "none",
-  repeat: -1,
-  transformOrigin: "50% 50%",
-});
+  /* Stats stagger */
+  gsap.from(".creative-stats .stats", {
+    y: 40,
+    opacity: 0,
+    stagger: 0.2,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".creative-stats",
+      start: "top 85%",
+    },
+  });
+
+  /* rotating text */
+  gsap.to(".round-text svg", {
+    rotate: 360,
+    duration: 12,
+    ease: "none",
+    repeat: -1,
+    transformOrigin: "50% 50%",
+  });
+}
 
 //ABOUT
 
